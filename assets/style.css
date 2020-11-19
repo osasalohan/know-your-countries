@@ -1,0 +1,58 @@
+body {
+  margin: 40px;
+}
+
+.countries-list {
+  padding: 20px 70px;
+}
+
+.countries-list > div {
+  padding: 0 40px;
+}
+
+.country {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.country-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 70px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.pagination a.active {
+  background-color: teal;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+img {
+  width: 500px;
+  height: 300px;
+}
+
+.screen:not(.countries-list) button {
+  padding: 20px;
+}
+
+.hide {
+  display: none;
+}
