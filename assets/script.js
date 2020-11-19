@@ -19,7 +19,7 @@ const activePage = (function () {
   return { get, set };
 })();
 
-//show countries page number {num}
+//show page number {num} of countries list
 function showPage(num) {
   for (let i = 1; i <= 12; i++) {
     document.querySelector(`#page${i}`).classList.add("hide");
@@ -32,11 +32,7 @@ function showPage(num) {
 //show previous countries page
 function prevPage() {
   let activePageNum = activePage.get();
-  if (activePageNum === 1) {
-    activePageNum = 12;
-  } else {
-    activePageNum--;
-  }
+  activePageNum === 1 ? (activePageNum = 12) : activePageNum--;
   activePage.set(activePageNum);
   showPage(activePageNum);
 }
@@ -44,11 +40,7 @@ function prevPage() {
 //show next countries page
 function nextPage() {
   let activePageNum = activePage.get();
-  if (activePageNum === 12) {
-    activePageNum = 1;
-  } else {
-    activePageNum++;
-  }
+  activePageNum === 12 ? (activePageNum = 1) : activePageNum++;
   activePage.set(activePageNum);
   showPage(activePageNum);
 }
@@ -89,10 +81,7 @@ fetch(allCountries)
   });
 
 document.addEventListener("click", (e) => {
-  if (
-    e.target.tagName === "BUTTON" &&
-    e.target.textContent === "View Details"
-  ) {
+  if (e.target.textContent === "View Details") {
     //toggle screen, fetch and display country data when view details button is clicked
     toggleScreens();
     let country = e.target.parentElement.firstElementChild.textContent;
