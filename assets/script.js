@@ -6,13 +6,13 @@ const screens = document.querySelectorAll(".screen");
 
 //stores active page number
 const activePage = (function () {
-  var activePageNum = 1;
+  let activePageNum = 1;
 
-  var get = function () {
+  const get = function () {
     return activePageNum;
   };
 
-  var set = function (page) {
+  const set = function (page) {
     activePageNum = page;
   };
 
